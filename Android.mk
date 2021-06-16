@@ -1,8 +1,15 @@
 LOCAL_PATH:=$(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE:=hellofb
+LOCAL_MODULE_TAGS := eng
 LOCAL_SRC_FILES:=main.c
 #LOCAL_C_INCLUDES :=
 #LOCAL_STATIC_LIBRARIES :=
 #LOCAL_SHARED_LIBRARIES :=
-include $(BUILD_EXECUTABLE)
+
+LOCAL_SDK_VERSION := current
+LOCAL_PACKAGE_NAME := HelloFB
+
+# include $(BUILD_EXECUTABLE)
+include $(BUILD_PACKAGE)
+include $(call all-makefiles-under,$(LOCAL_PATH))
